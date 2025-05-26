@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Pengguna</title>
+    <link rel="stylesheet" href="dashboard.style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-user-circle"></i> Dashboard</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-store"></i> Kembali ke Toko</a></li> <li><a href="#" class="nav-link active" data-section="profile"><i class="fas fa-id-card"></i> Profil Saya</a></li>
+                    <li><a href="#" class="nav-link" data-section="orders"><i class="fas fa-box-open"></i> Pesanan Saya</a></li>
+                    <li><a href="#" id="logout-button"><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+                </ul>
+        </aside>
+          <ul>
+            <li>
+              <a href="#" class="nav-link active" data-section="profile"
+                ><i class="fas fa-id-card"></i> Profil Saya</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="orders"
+                ><i class="fas fa-box-open"></i> Pesanan Saya</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="addresses"
+                ><i class="fas fa-map-marker-alt"></i> Daftar Alamat</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="wishlist"
+                ><i class="fas fa-heart"></i> Wishlist</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="reviews"
+                ><i class="fas fa-star"></i> Ulasan Saya</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link" data-section="settings"
+                ><i class="fas fa-cog"></i> Pengaturan Akun</a
+              >
+            </li>
+            <li>
+              <a href="#" id="logout-button"
+                ><i class="fas fa-sign-out-alt"></i> Keluar</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content">   
+        <header class="dashboard-main-header"> <h1>Selamat Datang, User!</h1>
+            <div class="header-cart-info">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="dashboard-cart-count">0</span>
+            </div>
+        </header>
+        <section id="profile-section" class="dashboard-section">
+          <header class="content-header">
+            <h1><i class="fas fa-id-card"></i> Profil Saya</h1>
+            <button class="btn btn-primary" id="edit-profile-btn">
+              <i class="fas fa-edit"></i> Edit Profil
+            </button>
+          </header>
+          <div class="content-body card">
+            <div id="profile-details">
+              <p>Memuat data profil...</p>
+            </div>
+            <form
+              id="profile-edit-form"
+              class="form-styled"
+              style="display: none"
+            >
+              <div class="form-group">
+                <label for="fullName">Nama Lengkap:</label>
+                <input type="text" id="fullName" name="fullName" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" disabled />
+              </div>
+              <div class="form-group">
+                <label for="phone">Nomor Telepon:</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+              <button type="submit" class="btn btn-success">
+                <i class="fas fa-save"></i> Simpan Perubahan
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="cancel-edit-profile-btn"
+              >
+                <i class="fas fa-times"></i> Batal
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section
+          id="orders-section"
+          class="dashboard-section"
+          style="display: none"
+        >
+          <header class="content-header">
+            <h1><i class="fas fa-box-open"></i> Pesanan Saya</h1>
+            <div class="filter-tabs">
+              <button class="tab-link active" data-status="semua">Semua</button>
+              <button class="tab-link" data-status="menunggu_pembayaran">
+                Menunggu Pembayaran
+              </button>
+              <button class="tab-link" data-status="diproses">Diproses</button>
+              <button class="tab-link" data-status="dikirim">Dikirim</button>
+              <button class="tab-link" data-status="selesai">Selesai</button>
+            </div>
+          </header>
+          <div class="content-body">
+            <div id="orders-list">
+              <p>Memuat daftar pesanan...</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="addresses-section"
+          class="dashboard-section"
+          style="display: none"
+        >
+          <header class="content-header">
+            <h1><i class="fas fa-map-marker-alt"></i> Daftar Alamat</h1>
+            <button class="btn btn-primary" id="add-address-btn">
+              <i class="fas fa-plus"></i> Tambah Alamat Baru
+            </button>
+          </header>
+          <div class="content-body">
+            <div id="addresses-list">
+              <p>Memuat daftar alamat...</p>
+            </div>
+            <div
+              id="address-form-container"
+              class="card"
+              style="display: none; margin-top: 20px"
+            >
+              <h3 id="address-form-title">Tambah Alamat Baru</h3>
+              <form id="address-form" class="form-styled">
+                <input type="hidden" id="addressId" name="addressId" />
+                <div class="form-group">
+                  <label for="addressLabel"
+                    >Label Alamat (Contoh: Rumah, Kantor):</label
+                  >
+                  <input
+                    type="text"
+                    id="addressLabel"
+                    name="addressLabel"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="recipientName">Nama Penerima:</label>
+                  <input
+                    type="text"
+                    id="recipientName"
+                    name="recipientName"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="recipientPhone">No. Telepon Penerima:</label>
+                  <input
+                    type="tel"
+                    id="recipientPhone"
+                    name="recipientPhone"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="fullAddress">Alamat Lengkap:</label>
+                  <textarea
+                    id="fullAddress"
+                    name="fullAddress"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="city">Kota/Kabupaten:</label>
+                  <input type="text" id="city" name="city" required />
+                </div>
+                <div class="form-group">
+                  <label for="postalCode">Kode Pos:</label>
+                  <input
+                    type="text"
+                    id="postalCode"
+                    name="postalCode"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" id="isPrimary" name="isPrimary" />
+                  <label for="isPrimary" class="inline-label"
+                    >Jadikan Alamat Utama</label
+                  >
+                </div>
+                <button type="submit" class="btn btn-success">
+                  <i class="fas fa-save"></i> Simpan Alamat
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="cancel-address-form-btn"
+                >
+                  <i class="fas fa-times"></i> Batal
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="wishlist-section"
+          class="dashboard-section"
+          style="display: none"
+        >
+          <header class="content-header">
+            <h1><i class="fas fa-heart"></i> Wishlist Saya</h1>
+          </header>
+          <div class="content-body card">
+            <p>Fitur wishlist akan segera hadir!</p>
+          </div>
+        </section>
+
+        <section
+          id="reviews-section"
+          class="dashboard-section"
+          style="display: none"
+        >
+          <header class="content-header">
+            <h1><i class="fas fa-star"></i> Ulasan Saya</h1>
+          </header>
+          <div class="content-body card">
+            <p>Fitur ulasan akan segera hadir!</p>
+          </div>
+        </section>
+
+        <section
+          id="settings-section"
+          class="dashboard-section"
+          style="display: none"
+        >
+          <header class="content-header">
+            <h1><i class="fas fa-cog"></i> Pengaturan Akun</h1>
+          </header>
+          <div class="content-body card">
+            <h3>Ubah Password</h3>
+            <form class="form-styled">
+              <div class="form-group">
+                <label for="currentPassword">Password Saat Ini:</label>
+                <input
+                  type="password"
+                  id="currentPassword"
+                  name="currentPassword"
+                />
+              </div>
+              <div class="form-group">
+                <label for="newPassword">Password Baru:</label>
+                <input type="password" id="newPassword" name="newPassword" />
+              </div>
+              <div class="form-group">
+                <label for="confirmNewPassword"
+                  >Konfirmasi Password Baru:</label
+                >
+                <input
+                  type="password"
+                  id="confirmNewPassword"
+                  name="confirmNewPassword"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Ubah Password
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="dashboard.script.js"></script>
+  </body>
+</html>

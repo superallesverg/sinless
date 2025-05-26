@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Online Kita</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a href="index.html" class="navbar-brand">SINLESS</a>
+          <ul class="navbar-nav">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#product-listing-section">Produk</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Kontak</a></li>
+            <li><a href="dashboard.html">Akun Saya</a></li>
+          </ul>
+          <div class="navbar-icons">
+            <a
+              href="keranjang.html"
+              class="header-cart-info"
+              style="text-decoration: none; color: inherit"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="product-listing-section">
+        <h2>Produk Terbaru</h2>
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+      <section id="product-detail-section" style="display: none">
+        <button id="back-to-products-btn">
+          <i class="fas fa-arrow-left"></i> Kembali ke Produk
+        </button>
+        <div class="product-detail-layout">
+          <div class="product-detail-images">
+            <img
+              id="main-product-image"
+              src="https://via.placeholder.com/400"
+              alt="Gambar Produk Utama"
+            />
+            <div class="thumbnail-images" id="thumbnail-images"></div>
+          </div>
+          <div class="product-detail-info">
+            <h1 id="product-detail-name">Nama Produk</h1>
+            <p class="product-brand">
+              Brand: <span id="product-detail-brand">Nama Brand</span>
+            </p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(15 Ulasan)</span>
+            </div>
+            <p id="product-detail-price" class="price">Rp 0</p>
+            <p id="product-detail-stock" class="stock-status">Stok: 0</p>
+
+            <div class="product-options">
+              <div class="option-group" id="size-option-group">
+                <label for="product-size">Ukuran:</label>
+                <select name="size" id="product-size"></select>
+              </div>
+              <div
+                class="option-group"
+                id="color-option-group"
+                style="display: none"
+              >
+                <label>Warna:</label>
+                <div class="color-swatches" id="product-colors"></div>
+              </div>
+            </div>
+
+            <div class="product-quantity">
+              <label for="quantity">Jumlah:</label>
+              <div class="quantity-selector">
+                <button class="quantity-btn" id="decrease-qty">-</button>
+                <input type="number" id="quantity" value="1" min="1" />
+                <button class="quantity-btn" id="increase-qty">+</button>
+              </div>
+            </div>
+
+            <div class="product-actions">
+              <button class="btn btn-primary" id="add-to-cart-btn">
+                <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+              </button>
+              <button class="btn btn-success" id="buy-now-btn">
+                <i class="fas fa-bolt"></i> Beli Sekarang
+              </button>
+            </div>
+
+            <div class="product-description">
+              <h3>Deskripsi Produk</h3>
+              <p id="product-detail-description">
+                Deskripsi lengkap produk akan muncul di sini...
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; <span id="current-year"></span> SINLESS. Hak Cipta Dilindungi.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

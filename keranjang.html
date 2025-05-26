@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keranjang Belanja - SINLESS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a href="index.html" class="navbar-brand">SINLESS</a>
+          <ul class="navbar-nav">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#product-listing-section">Produk</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Kontak</a></li>
+            <li><a href="dashboard.html">Akun Saya</a></li>
+          </ul>
+          <div class="navbar-icons">
+            <a href="keranjang.html" id="cart-icon-link">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="cart-page-section">
+        <h2>Keranjang Belanja Anda</h2>
+        <div id="cart-items-container">
+          <p class="empty-cart-message" style="display: none">
+            Keranjang Anda masih kosong.
+          </p>
+        </div>
+
+        <div id="cart-summary" style="display: none">
+          <h3>Ringkasan Belanja</h3>
+          <div class="summary-row">
+            <span>Subtotal Produk:</span>
+            <span id="cart-subtotal">Rp 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Biaya Pengiriman:</span>
+            <span id="cart-shipping">Rp 0</span>
+          </div>
+          <hr />
+          <div class="summary-row total-row">
+            <span>Total Keseluruhan:</span>
+            <span id="cart-total">Rp 0</span>
+          </div>
+          <button
+            class="btn btn-success btn-checkout"
+            id="proceed-to-checkout-btn"
+          >
+            <i class="fas fa-shield-alt"></i> Lanjutkan ke Pembayaran
+          </button>
+        </div>
+        <div class="cart-actions">
+          <a
+            href="index.html#product-listing-section"
+            class="btn btn-secondary"
+          >
+            <i class="fas fa-arrow-left"></i> Lanjutkan Belanja
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; <span id="current-year"></span> SINLESS. Hak Cipta Dilindungi.
+        </p>
+      </div>
+    </footer>
+
+    <script src="keranjang.script.js"></script>
+  </body>
+</html>
